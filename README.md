@@ -5,5 +5,7 @@
 # Email: joachimvivian3@gmail.com
 
 # Image: 
+![](images/joachim.png)
 
-# Avatar: 
+# Github Avatar: 
+![](images/boxingj.jpeg)
