@@ -60,7 +60,7 @@ int A[100];     //Declared and array of size 100.
  */
 
 struct Node {
-    int x;        //Int value of Node
+    int x;        //int value of Node
     Node *next;   //Pointer that points to next Node
 
     /**
@@ -81,6 +81,7 @@ struct Node {
         next = NULL;       // next points to NULL.
     }
 
+    
     /**
      * Public: Node(int n)
      * 
@@ -95,7 +96,7 @@ struct Node {
      *      None
      */
     Node(int n) { 
-        x = n; //  x is equal to the current value of n 
+        x = n;         // x is equal to the current value of n 
         next = NULL;  // next is equal to NULL.
     }
 };
@@ -107,7 +108,7 @@ struct Node {
  * 
  * Description:
  *      A list class made up of Head, Tail and Size member data.
- *      It uses this combined with the Node struct to construct
+ *      It uses this combined with the struct called Node to construct
  *      a linked list.
  * 
  * Public Methods:
@@ -140,9 +141,6 @@ struct Node {
  *          L3.insert(14);
  *          cout << L3[2];
  *
- *
- *
- *  
  * ************************   
  */
 
@@ -159,7 +157,7 @@ public:
      * Public: List()
      * 
      * Description:
-     *      this is a Default constructor for the List class which sets the 
+     *      This is a Default constructor for the List class which sets the 
      *      Head, Tail and Size to their default values.
      * 
      * Params:
@@ -195,7 +193,7 @@ public:
 
         if (!Head && !Tail) {           //If head and tail point to nothing, set both of them to the new Node
             Head = Tail = Temp;
-        } else {                        //If not let the current tail point to the new Node.
+        } else {                        //else let the current tail point to the new Node.
             Tail->next = Temp;
             Tail = Temp;
         }
@@ -268,7 +266,7 @@ public:
         Node *Temp = Head;
         string list;
 
-        while (Temp != NULL) { // loads the value of each node into the sting list with this "-->"
+        while (Temp != NULL) { // loads the value of each node into the string list with this "-->"
             list += to_string(Temp->x) + "->";
             Temp = Temp->next;
         }
@@ -305,10 +303,10 @@ public:
      *      Concatenates two lists together(essenstial connects two lists together)
      * 
      * Params:
-     *      - const List : THe other list which gets added on 
+     *      - const List : The other list which gets added on 
      * 
      * Returns:
-     *      - It returns a new concatenated version of the lists
+     *      - It returns a new concatenated version of the lists.
      */
     List operator+(const List &Rhs) {
         // Create a new list that will contain both when done
