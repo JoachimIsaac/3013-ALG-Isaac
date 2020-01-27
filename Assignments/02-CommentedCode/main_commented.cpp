@@ -34,22 +34,27 @@ int A[100];     //Declared and array of size 100.
  * Node
  * 
  * Description:
- *      A Struct which holds the data and properties
- *      a node in a linked list which are a pointer
+ *      A Struct which holds the data and properties of
+ *      a node in a linked list which has a pointer
  *      to point to another node called (next) and (x) 
  *      which is the what holds the data that is inserted
  *      into the node.
  * 
  * Public Methods:
  *       - Constructor ( Node() ) 
- *       - Parameterized Constructor ( Node(10) )
+ *       - Parameterized Constructor ( Node(int n) )
  * 
  * Private Methods:
  *       - None
  * 
  * Usage: 
- *      - You create a Node so that you can fill it
- *        with data and connect to other nodes.
+ *           int val = 3;
+ *           Node *Temp = new Node(val);
+ *           Node *Temp2 = new Node();
+ *           Temp->x = 5;
+ *           Temp2->x = 6;
+ *           Temp->next = Temp2;
+ *      
  *      
  *      ************************************
  */
@@ -62,8 +67,8 @@ struct Node {
      * Public: Node()
      * 
      * Description:
-     *      this is a default constructor thata sets defaults for the nodes 
-     *      value and pointer
+     *      This is a default constructor that sets defaults for the node's 
+     *      value and pointer.
      * 
      * Params:
      *      None
@@ -72,7 +77,7 @@ struct Node {
      *      None
      */
     Node() {
-        x = -1;            // as a default x is set to -1
+        x = -1;            // by default, x is set to -1
         next = NULL;       // next points to NULL.
     }
 
@@ -80,7 +85,7 @@ struct Node {
      * Public: Node(int n)
      * 
      * Description:
-     *      this is a parameterized constructor you can set the value of the node
+     *      This is a parameterized constructor you can set the value of the node
      *      to a specific int value (n).
      * 
      * Params:
@@ -98,26 +103,47 @@ struct Node {
 
 
 /**
- * Class Name
+ * Class List
  * 
  * Description:
- *      Description of your class and what it does
+ *      A list class made up of Head, Tail and Size member data.
+ *      It uses this combined with the Node struct to construct
+ *      a linked list.
  * 
  * Public Methods:
- *      - A list of 
- *      - each public method
- *      - with return types
+ *      - Constructor List()
+ *      - void: Push(int val)
+ *      - void: Insert(int val)
+ *      - void: PrintTail()
+ *      - string: Print()
+ *      - int:  Pop()
+ *      - List: operator+(const List &Rhs)
+ *      - int: operator[](int index)
+ *      - ostream: &operator<<(ostream &os, List L)
  * 
  * Private Methods:
- *      - A list of 
- *      - each private method
- *      - with return types
+ *      - None
  * 
- * Usage: 
- * ************************
- *      - examples of how
- *      - to use your class 
- *      
+ * Usage:
+ *          List L1;
+ *          List L2;
+ *          List L3;
+ *          L1.push(10);
+ *          L1.push(20);
+ *          L1.push(30);
+ *          L2.push(40);
+ *          L2.push(50);
+ *          L2.push(60);
+ *          L3 = L1 + L2;
+ *          L3.print();
+ *          L3.pop();
+ *          L3.insert(14);
+ *          cout << L3[2];
+ *
+ *
+ *
+ *  
+ * ************************   
  */
 
 class List {
@@ -237,6 +263,7 @@ public:
      * Returns:
      *      - returns a string of list values connected by "->"
      */
+    
     string Print() {
         Node *Temp = Head;
         string list;
