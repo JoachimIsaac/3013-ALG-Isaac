@@ -24,7 +24,7 @@ This assignment is more about breaking the ice with github, with a little to do 
 
 | Number | Folder                              | Description                            |
 | :----: | ----------------------------------- | -------------------------------------- |
-| 02     | [02-CommentedCode](./CommentedCode) | Assignment to ensure proper commenting |
+| 02     | [02-CommentedCode](/main_commented) | Assignment to ensure proper commenting |
 
 
 - Upload your assignment to github BEFORE the due date. 
