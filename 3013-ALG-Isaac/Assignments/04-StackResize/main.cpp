@@ -138,8 +138,15 @@ public:
   *      [int] top value if any
   */
   int Pop(){
+    
+    int half_array_size = 0 + (size - 1)/2;
+
     if(!Empty()){
       return A[top--];
+    }
+    
+    if(top <= half_array_size){
+      ContainerShrink();
     }
 
     return -99; // some sentinel value
@@ -179,7 +186,7 @@ public:
   */
   bool Push(int x){
     if(Full()){
-      Resize();
+      ContainerGrow();
     }
     if(!Full()){
       A[++top] = x;
@@ -191,7 +198,7 @@ public:
   }
 
  /**
-  * Public void: Resize
+  * Public void: ContainerGrow
   * 
   * Description:
   *      Resizes the container for the stack by doubling
@@ -203,8 +210,8 @@ public:
   * Returns:
   *      NULL
   */
-  void Resize(){
-    int newSize = size*2;       // double size of original
+  void ContainerGrow(){
+    int newSize = size*1.75;       // double size of original
     int *B = new int[newSize];  // allocate new memory
 
     for(int i=0;i<size;i++){    // copy values to new array
@@ -219,6 +226,26 @@ public:
 
   }
 
+  void ContainerShrink(){
+      int half_array_size = 0 + (size - 1) / 2;
+      // int newSize = half_array_size;
+      int *tempArr = new int[half_array_size];
+      
+       for(int i=0;i<half_array_size;i++){    // copy values to new array
+          tempArr[i] = A[i];
+       }
+
+       delete [] A; 
+       size = half_array_size; 
+       A = tempArr; 
+    
+  }
+
+  void printSize(){
+    cout<<"Here is the size: "<<size<<"\n";
+  }
+
+
 };
 
 // MAIN DRIVER
@@ -227,7 +254,7 @@ int main() {
   ArrayStack stack;
   int r = 0;
 
-  for(int i=0;i<20;i++){
+  for(int i=0;i<9;i++){
     r = rand() % 100;
     r = i+1;
     if(!stack.Push(r)){
@@ -240,4 +267,6 @@ int main() {
   }
 
   stack.Print();
+  stack.printSize();
+  
 }
