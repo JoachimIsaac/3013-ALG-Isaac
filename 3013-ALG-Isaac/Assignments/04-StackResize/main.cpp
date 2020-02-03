@@ -32,10 +32,12 @@ using namespace std;
 class ArrayStack{
 private:
   int *A;           // pointer to array of int's
-  int size;         // current max stack size
-  int top;          // top of stack 
+           // current max stack size
+           // top of stack 
 
 public:
+  int top; 
+  int size;
  /**
   * ArrayStack
   * 
@@ -140,14 +142,17 @@ public:
   int Pop(){
     
     int half_array_size = 0 + (size - 1)/2;
-
+    
+    if(top <= half_array_size){
+      ContainerShrink();
+      cout<< "It's half empty!\n";
+    }
+  
     if(!Empty()){
       return A[top--];
     }
     
-    if(top <= half_array_size){
-      ContainerShrink();
-    }
+    
 
     return -99; // some sentinel value
                 // not a good solution
@@ -187,7 +192,10 @@ public:
   bool Push(int x){
     if(Full()){
       ContainerGrow();
+      cout<<"Array grew at this point!!\n";
+      cout<<"size is  "<< size;
     }
+  
     if(!Full()){
       A[++top] = x;
       return true;
@@ -244,7 +252,16 @@ public:
   void printSize(){
     cout<<"Here is the size: "<<size<<"\n";
   }
+  
+  // Figure this out !!
+  // void CheckResize(){
+  //   int half_array_size = 0 + (size - 1)/2;
+    
+  //   if(top <= half_array_size) {ContainerShrink();}
 
+  //   if(Full()) {ContainerGrow();}
+
+  // }
 
 };
 
@@ -254,7 +271,7 @@ int main() {
   ArrayStack stack;
   int r = 0;
 
-  for(int i=0;i<9;i++){
+  for(int i=0;i<10;i++){
     r = rand() % 100;
     r = i+1;
     if(!stack.Push(r)){
@@ -262,11 +279,34 @@ int main() {
     }
   }
 
-  for(int i=0;i<7;i++){
-    stack.Pop();
+  
+
+  stack.Print();
+  stack.printSize();
+
+  stack.Pop();
+  stack.Pop();
+  stack.Pop();
+  stack.Pop();
+  stack.Pop();
+  stack.Pop();
+
+  cout<<"Top postion:"<<stack.top<<"\n";
+  cout<<"Current size:"<<stack.size<<"\n";
+
+  stack.Print();
+  stack.printSize();
+
+   for(int i=0;i<20;i++){
+    r = rand() % 100;
+    r = i+1;
+    if(!stack.Push(r)){
+      cout<<"Push failed"<<endl;
+    }
   }
 
   stack.Print();
   stack.printSize();
-  
+
+
 }
