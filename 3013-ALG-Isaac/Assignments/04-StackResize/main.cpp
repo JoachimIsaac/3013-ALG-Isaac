@@ -143,7 +143,11 @@ public:
     
     int half_array_size = 0 + (size - 1)/2;
     
-    if(top <= half_array_size){
+    // if(top <= half_array_size){
+    //   ContainerShrink();
+    //   cout<< "It's half empty!\n";
+    // }
+    if(CheckResize() == "Shrink"){
       ContainerShrink();
       cout<< "It's half empty!\n";
     }
@@ -190,10 +194,16 @@ public:
   *      [bool] ; success = true
   */
   bool Push(int x){
-    if(Full()){
+    // if(Full()){
+    //   ContainerGrow();
+    //   cout<<"Array grew at this point!!\n";
+    //   cout<<"size is  "<< size;
+    // }
+
+    if(CheckResize() == "Grow"){
       ContainerGrow();
       cout<<"Array grew at this point!!\n";
-      cout<<"size is  "<< size;
+      cout<<"size is  "<< size<<"\n";
     }
   
     if(!Full()){
@@ -254,14 +264,20 @@ public:
   }
   
   // Figure this out !!
-  // void CheckResize(){
-  //   int half_array_size = 0 + (size - 1)/2;
+  string CheckResize(){
+    int half_array_size = 0 + (size - 1)/2;
     
-  //   if(top <= half_array_size) {ContainerShrink();}
+    if(top <= half_array_size) {
+      return "Shrink";
+      }
 
-  //   if(Full()) {ContainerGrow();}
+    if(Full()){
+      return "Grow" ;
+      }
 
-  // }
+    return "Pass";
+
+  }
 
 };
 
