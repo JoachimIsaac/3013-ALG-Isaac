@@ -13,6 +13,8 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -276,53 +278,125 @@ public:
       }
 
     return "Pass";
-
   }
 
+  int getStackSize(){
+    return size;
+  }
 };
+
+//Open streams for reading and writing
+void openFiles(ifstream &infile, ofstream &outfile)
+{
+  string input_file;
+  string output_file;
+  cout << "Please enter the name of the input file. ";
+  cin >> input_file;
+  cout << "Please enter the name of the output file. ";
+  cin >> output_file;
+  infile.open(input_file);
+  outfile.open(output_file);
+}
+
+//Print name and program assignment
+void printHeading(ofstream &outfile)
+{
+  outfile << "######################################################################\n\n";
+  outfile << "Assignment 4 - Resizing the Stack\n";
+  outfile << "CMPS 3013\n";
+  outfile << "Name: Joachim Isaac \n";
+}
+void printResults(ofstream &outfile,int currentStackSize,int maxStackSize,int timesResized){
+  outfile << "Max Stack Size: " << maxStackSize << "\n";
+  outfile << "End Stack Size: " << currentStackSize << "\n";
+  outfile << "Stack Resized: " << timesResized << " times" << "\n\n"; 
+  outfile << "######################################################################\n";
+}
+
+
 
 // MAIN DRIVER
 // Simple Array Based Stack Usage:
 int main() {
+  
+  ifstream infile;
+  ofstream outfile;
   ArrayStack stack;
-  int r = 0;
 
-  for(int i=0;i<10;i++){
-    r = rand() % 100;
-    r = i+1;
-    if(!stack.Push(r)){
-      cout<<"Push failed"<<endl;
+  openFiles(infile,outfile);
+  printHeading(outfile);
+  
+    int value;
+    int maxStackSize = -1;
+    int currentStackSize = 0;
+    int timesResized = 0; 
+    string resized;
+
+    while (infile >> value){
+       
+       
+      
+
+       if(value % 2 == 0){
+         resized = stack.CheckResize();
+        
+        if(resized =="Grow"){
+           timesResized++;
+         } 
+         stack.Push(value);
+      }
+      else{
+        resized = stack.CheckResize(); 
+        if(resized =="Shrink"){
+          timesResized++;
+        }
+        stack.Pop();
+      }
+      
+         
+      
+        currentStackSize = stack.getStackSize();
+
+        if(currentStackSize > maxStackSize){
+          maxStackSize = currentStackSize;
+        }
     }
-  }
+
+    printResults(outfile,currentStackSize,maxStackSize,timesResized);
+  
+  
+ 
 
   
 
-  stack.Print();
-  stack.printSize();
+  // stack.Print();
+  // stack.printSize();
 
-  stack.Pop();
-  stack.Pop();
-  stack.Pop();
-  stack.Pop();
-  stack.Pop();
-  stack.Pop();
+  // stack.Pop();
+  // stack.Pop();
+  // stack.Pop();
+  // stack.Pop();
+  // stack.Pop();
+  // stack.Pop();
 
-  cout<<"Top postion:"<<stack.top<<"\n";
-  cout<<"Current size:"<<stack.size<<"\n";
+  // cout<<"Top postion:"<<stack.top<<"\n";
+  // cout<<"Current size:"<<stack.size<<"\n";
 
-  stack.Print();
-  stack.printSize();
+  // stack.Print();
+  // stack.printSize();
 
-   for(int i=0;i<20;i++){
-    r = rand() % 100;
-    r = i+1;
-    if(!stack.Push(r)){
-      cout<<"Push failed"<<endl;
-    }
-  }
+  //  for(int i=0;i<20;i++){
+  //   r = rand() % 100;
+  //   r = i+1;
+  //   if(!stack.Push(r)){
+  //     cout<<"Push failed"<<endl;
+  //   }
+  // }
 
-  stack.Print();
-  stack.printSize();
+  // stack.Print();
+  // stack.printSize();
 
 
 }
+
+

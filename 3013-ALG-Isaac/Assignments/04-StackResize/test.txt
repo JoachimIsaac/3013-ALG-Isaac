@@ -1,0 +1,10 @@
+######################################################################
+
+Assignment 4 - Resizing the Stack
+CMPS 3013
+Name: Joachim Isaac 
+Max Stack Size: 10
+End Stack Size: 0
+Stack Resized: 50193 times
+
+######################################################################
