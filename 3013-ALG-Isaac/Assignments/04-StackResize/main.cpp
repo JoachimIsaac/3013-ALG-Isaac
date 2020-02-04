@@ -8,7 +8,9 @@
 // Semester:         Spring 2020
 //
 // Description:
-//       Overview of a class implementing an array based stack
+//       Overview of a class implementing an array based stack. Resizing
+//       was implemented into this class. If the array is too full it
+//       increases by 1.75 and if it is half empty it decreases by 0.5.
 //
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -33,13 +35,13 @@ using namespace std;
  */
 class ArrayStack{
 private:
-  int *A;           // pointer to array of int's
-           // current max stack size
-           // top of stack 
+  int *A;        // pointer to array of int's.
+  int top;      // current max stack size.
+  int size;     // top of stack.
+           
 
 public:
-  int top; 
-  int size;
+  
  /**
   * ArrayStack
   * 
@@ -133,7 +135,9 @@ public:
   * Public int: Pop
   * 
   * Description:
-  *      Returns top value and removes it from stack
+  *      Returns top value and removes it from stack, 
+  *      if the stack is half empty it resizes the array
+  *      by 0.5 .
   * 
   * Params:
   *      NULL
@@ -158,8 +162,6 @@ public:
       return A[top--];
     }
     
-    
-
     return -99; // some sentinel value
                 // not a good solution
   }
@@ -187,7 +189,10 @@ public:
   * Public bool: Push
   * 
   * Description:
-  *      Adds an item to top of stack
+  *      Adds an item to top of stack and if the 
+  *      stack is full it resizes by 1.75 times
+  *      it current size.
+  *
   * 
   * Params:
   *      [int] : item to be added
@@ -196,16 +201,9 @@ public:
   *      [bool] ; success = true
   */
   bool Push(int x){
-    // if(Full()){
-    //   ContainerGrow();
-    //   cout<<"Array grew at this point!!\n";
-    //   cout<<"size is  "<< size;
-    // }
-
+    
     if(CheckResize() == "Grow"){
       ContainerGrow();
-      cout<<"Array grew at this point!!\n";
-      cout<<"size is  "<< size<<"\n";
     }
   
     if(!Full()){
@@ -221,8 +219,9 @@ public:
   * Public void: ContainerGrow
   * 
   * Description:
-  *      Resizes the container for the stack by doubling
-  *      its capacity
+  *      Resizes the container for the stack by increasing
+  *      it's capacity by 1.75 times.
+  *      
   * 
   * Params:
   *      NULL
@@ -246,7 +245,23 @@ public:
 
   }
 
+
+/**
+  * Public void: ContainerShrink
+  * 
+  * Description:
+  *      Resizes the container for the stack when the stack
+  *      top value of the stack is less than 0.5 the size of
+  *      the stack.  
+  * 
+  * Params:
+  *      NULL
+  * 
+  * Returns:
+  *      NULL
+  */
   void ContainerShrink(){
+
       int half_array_size = 0 + (size - 1) / 2;
       // int newSize = half_array_size;
       int *tempArr = new int[half_array_size];
@@ -261,11 +276,24 @@ public:
     
   }
 
-  void printSize(){
-    cout<<"Here is the size: "<<size<<"\n";
-  }
+
   
-  // Figure this out !!
+ /**
+  * Public strin: CheckResize
+  * 
+  * Description:
+  *           Returns a string based on three conditions, 
+  *           if when you should "Shrink" the array, "Grow"
+  *           or just do nothing ("Pass"). This allows
+  *           you to trigger when the array shrinks or grows.
+  *           
+  * 
+  * Params:
+  *      NULL
+  * 
+  * Returns:
+  *      String: either Shrink, Grow or Pass
+  */
   string CheckResize(){
     int half_array_size = 0 + (size - 1)/2;
     
@@ -280,12 +308,39 @@ public:
     return "Pass";
   }
 
+
+
+/**
+  * Public int: getStackSize
+  * 
+  * Description:
+  *         This returns the stack size as an integer.  
+  * 
+  * Params:
+  *      NULL
+  * 
+  * Returns:
+  *      NULL
+  */
   int getStackSize(){
     return size;
   }
 };
 
-//Open streams for reading and writing
+
+/**
+  * Public void: openFiles
+  * 
+  * Description:  Takes in name of files from user and 
+  *               opens them.
+  *        
+  * 
+  * Params:
+  *      NULL
+  * 
+  * Returns:
+  *      NULL
+  */
 void openFiles(ifstream &infile, ofstream &outfile)
 {
   string input_file;
@@ -298,7 +353,18 @@ void openFiles(ifstream &infile, ofstream &outfile)
   outfile.open(output_file);
 }
 
-//Print name and program assignment
+/**
+  * Public void: printHeading
+  * 
+  * Description:
+  *       
+  * 
+  * Params:
+  *      NULL
+  * 
+  * Returns:
+  *      NULL
+  */
 void printHeading(ofstream &outfile)
 {
   outfile << "######################################################################\n\n";
@@ -306,6 +372,20 @@ void printHeading(ofstream &outfile)
   outfile << "CMPS 3013\n";
   outfile << "Name: Joachim Isaac \n";
 }
+
+/**
+  * Public void: printResults
+  * 
+  * Description:
+  *      Print the results of the Max Stack Size, End Stack Size, and
+  *      Stack Resized count.  
+  * 
+  * Params:
+  *      NULL
+  * 
+  * Returns:
+  *      NULL
+  */
 void printResults(ofstream &outfile,int currentStackSize,int maxStackSize,int timesResized){
   outfile << "Max Stack Size: " << maxStackSize << "\n";
   outfile << "End Stack Size: " << currentStackSize << "\n";
@@ -333,9 +413,6 @@ int main() {
     string resized;
 
     while (infile >> value){
-       
-       
-      
 
        if(value % 2 == 0){
          resized = stack.CheckResize();
@@ -353,8 +430,6 @@ int main() {
         stack.Pop();
       }
       
-         
-      
         currentStackSize = stack.getStackSize();
 
         if(currentStackSize > maxStackSize){
@@ -363,39 +438,6 @@ int main() {
     }
 
     printResults(outfile,currentStackSize,maxStackSize,timesResized);
-  
-  
- 
-
-  
-
-  // stack.Print();
-  // stack.printSize();
-
-  // stack.Pop();
-  // stack.Pop();
-  // stack.Pop();
-  // stack.Pop();
-  // stack.Pop();
-  // stack.Pop();
-
-  // cout<<"Top postion:"<<stack.top<<"\n";
-  // cout<<"Current size:"<<stack.size<<"\n";
-
-  // stack.Print();
-  // stack.printSize();
-
-  //  for(int i=0;i<20;i++){
-  //   r = rand() % 100;
-  //   r = i+1;
-  //   if(!stack.Push(r)){
-  //     cout<<"Push failed"<<endl;
-  //   }
-  // }
-
-  // stack.Print();
-  // stack.printSize();
-
 
 }
 
