@@ -281,13 +281,13 @@ public:
 
   
  /**
-  * Public strin: CheckResize
+  * Public string: CheckResize
   * 
   * Description:
-  *           Returns a string based on three conditions, 
-  *           "Shrink" the array, "Grow"
-  *           or just do nothing ("Pass"). This allows
-  *           you to trigger when the array shrinks or grows.
+  *     Returns a string based on three conditions, 
+  *     "Shrink" the array, "Grow"
+  *     or just do nothing ("Pass"). This allows
+  *     you to trigger when the array shrinks or grows.
   *           
   * 
   * Params:
@@ -328,7 +328,7 @@ public:
   *      NULL
   * 
   * Returns:
-  *      NULL
+  *      int: the stack size
   */
   int getStackSize(){
     return size;
@@ -412,8 +412,8 @@ int main() {
   ofstream outfile;//file stream class used for file handling of output. 
   ArrayStack stack;//Instance of stack ArrayStack class created.
 
-  openFiles(infile,outfile); //Opens the files that we will read from 
-                            //and write to.
+  openFiles(infile,outfile);//Opens the files that we will read from 
+                           //and write to.
   
   printHeading(outfile);//prints the heading.
   
@@ -433,7 +433,7 @@ int main() {
       //If the value that was read in is even
        if(value % 2 == 0){
 
-         //check if the stack has to be resized.                               
+         //Check if the stack has to be resized.                               
          resized = stack.CheckResize();
         
         //Increment timesResized if it has to be resized.
@@ -442,22 +442,22 @@ int main() {
          } 
          stack.Push(value); //Then push the value into the stack.
       }
-      else{ //If value was odd.
+      else{//If value was odd.
 
-        //check if the stack has to be resized.
+        //Check if the stack has to be resized.
         resized = stack.CheckResize(); 
 
         //Increment timesResized if it has to be resized.
         if(resized =="Shrink"){ 
           timesResized++;
         }
-        stack.Pop(); //Then pop the value off the stack.
+        stack.Pop();//Then pop the value off the stack.
       }
-        //update the current size of the stack.
+        //Update the current size of the stack.
         currentStackSize = stack.getStackSize();
 
         //Update the maxStack size
-        // if currentStackSize is larger.
+        //if currentStackSize is larger.
         if(currentStackSize > maxStackSize){
           maxStackSize = currentStackSize;  
         }

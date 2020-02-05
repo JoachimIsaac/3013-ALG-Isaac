@@ -1,10 +1,11 @@
+FileName: nums_test.dat
 ######################################################################
 
 Assignment 4 - Resizing the Stack
 CMPS 3013
 Name: Joachim Isaac 
-Max Stack Size: 50
+Max Stack Size: 51695
 End Stack Size: 0
-Stack Resized: 125 times
+Stack Resized: 39 times
 
 ######################################################################
