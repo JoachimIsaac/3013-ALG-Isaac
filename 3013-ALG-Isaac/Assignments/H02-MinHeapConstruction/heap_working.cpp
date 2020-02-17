@@ -1,3 +1,21 @@
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Author:           Joachim Isaac 
+// Email:            joachimvivian3@gmail.com
+// Label:            H02
+// Title:            H02-MinHeapConstruction 
+// Course:           3013
+// Semester:         Spring 2020
+//
+// Description:
+//       Created a min heap ADT using an array. Created different functions 
+//       like heapify, Shiftdown and Bubble up.
+//       
+//      
+//
+/////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -322,7 +340,7 @@ public:
 };
 
 int main() {
-    
+
     cout<<"\n";
     cout << "########################################\n";
     cout << "H02 - Compelte Heap Methods\n";
