@@ -3,17 +3,16 @@
 
 //Default templated constructor.
 /**
-     * Public : LoadList
+     * Public : List()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      Creates an instance of a templated linked list.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      None
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      Nothing
      */
 template <class ItemType>
 List<ItemType>::List()
@@ -26,20 +25,22 @@ List<ItemType>::List()
     this->count = 0;
 }
 
+
+//Templated copy constructor.
 /**
-     * Public : LoadList
+     * Public : List(List &other)
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      Makes a copy of a linked list using another
+     *      linked list.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      
+     *      List &other   :  another linked list
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      Nothing
      */
-//Templated copy constructor.
 template <class ItemType>
 List<ItemType>::List(List &other)
 {
@@ -73,20 +74,19 @@ List<ItemType>::List(List &other)
 }
 
 
+// Destructor
 /**
-     * Public : LoadList
+     * Public : ~List()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      Clears all the memory the linked list used.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      None
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      None
      */
-// Destructor
 template <class ItemType>
 List<ItemType>::~List()
 {
@@ -107,19 +107,19 @@ List<ItemType>::~List()
 
 
 
-//Swaps the values between two link lists.
+
 /**
-     * Public : LoadList
+     * Public : SwapLists(List &other)
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      //Swaps the values between two link lists.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      List &other   :  another linked list.
+     *      
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *     void
      */
 template <class ItemType>
 void List<ItemType>::SwapLists(List &other)
@@ -143,20 +143,20 @@ void List<ItemType>::SwapLists(List &other)
     other.count = count;
 }
 
-//Clears every node in the list
-//besides the dummy node.
+
+
 /**
-     * Public : LoadList
+     * Public : ClearList()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *     Clears every node in the list
+     *     besides the dummy node.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      None
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      None
      */
 template <class ItemType>
 void List<ItemType>::ClearList()
@@ -168,19 +168,18 @@ void List<ItemType>::ClearList()
 
 
 
-//Resets the cursor(sets it back to head)
+
 /**
-     * Public : LoadList
+     * Public : ResetCursor()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      //Resets the cursor(sets it back to head)
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      None 
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      None
      */
 template <class ItemType>
 void List<ItemType>::ResetCursor()
@@ -190,20 +189,19 @@ void List<ItemType>::ResetCursor()
 
 
 
-//Returns a boolean value wether
-//the cursor is at the end or not.
+
 /**
-     * Public : LoadList
+     * Public : CursorAtEnd()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      Returns a boolean value wether
+     *      the cursor is at the end or not.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      None
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      None
      */
 template <class ItemType>
 bool List<ItemType>::CursorAtEnd()
@@ -220,20 +218,20 @@ bool List<ItemType>::CursorAtEnd()
 
 
 
-//Loads a Item with a value(obj,int,string,etc.)
-//and passes it by reference.
 /**
-     * Public : LoadList
+     * Public : GetCurrentItem(ItemType &Item)
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      
+     *    Loads a Item with a value(obj,int,string,etc.)
+     *    and passes it by reference.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      ItemType &Item:  value(obj,int,string,etc.)
+     *      
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      void
      */
 template <class ItemType>
 void List<ItemType>::GetCurrentItem(ItemType &Item)
@@ -247,17 +245,17 @@ void List<ItemType>::GetCurrentItem(ItemType &Item)
 
 
 /**
-     * Public : LoadList
+     * Public : GetCurrentItem()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      Acesses the node and returns the string value
+     *      contained in it's 'word' member data.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      None
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      string: returns the string
      */
 template <class ItemType>
 string List<ItemType>::GetCurrentItem()
@@ -271,19 +269,19 @@ string List<ItemType>::GetCurrentItem()
 
 
 
-//Sets a new item into a node.
+
 /**
-     * Public : LoadList
+     * Public : UpdateCurrentItem(const ItemType &Item)
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *    //Sets a new item into a node.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      const ItemType &Item:  value(obj,int,string,etc.)
+     *    
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      void
      */
 template <class ItemType>
 void List<ItemType>::UpdateCurrentItem(const ItemType &Item)
@@ -296,19 +294,18 @@ void List<ItemType>::UpdateCurrentItem(const ItemType &Item)
 
 
 
-//Advances the cursor to the next node in the list.
+
 /**
-     * Public : LoadList
+     * Public : AdvanceCursor()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *     Advances the cursor to the next node in the list.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      None
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      void
      */
 template <class ItemType>
 void List<ItemType>::AdvanceCursor()
@@ -321,19 +318,19 @@ void List<ItemType>::AdvanceCursor()
 
 
 
-//Inserts and Item into the list.
+
 /**
-     * Public : LoadList
+     * Public : InsertItem(const ItemType &Item)
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      Inserts and Item into the list.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      const ItemType &Item:  value(obj,int,string,etc.)
+     *      
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      void
      */
 template <class ItemType>
 void List<ItemType>::InsertItem(const ItemType &Item)
@@ -358,20 +355,20 @@ void List<ItemType>::InsertItem(const ItemType &Item)
 }
 
 
-//Inserts and two pieces of data int into one node.
-//and inserts it into the
+
 /**
-     * Public : LoadList
+     * Public : InsertItem(const ItemType &Item, const ItemType &Def)
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *     //Inserts and two pieces of data int into one node.
+     *     //and inserts it into the
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      const ItemType &Item: value(obj,int,string,etc.)
+     *      const ItemType &Def:  value(obj,int,string,etc.)
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *      void
      */
 template <class ItemType>
 void List<ItemType>::InsertItem(const ItemType &Item, const ItemType &Def)
@@ -398,19 +395,17 @@ void List<ItemType>::InsertItem(const ItemType &Item, const ItemType &Def)
 }
 
 
-//Deletes an item in the list.
+
 /**
-     * Public : LoadList
+     * Public : DeleteItem()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *     //Deletes an item in the list.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
-     * 
+     *      None
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *     Void
      */
 template <class ItemType>
 void List<ItemType>::DeleteItem()
@@ -431,19 +426,18 @@ void List<ItemType>::DeleteItem()
 
 
 
-//Gets the current size of the list.
+
 /**
-     * Public : LoadList
+     * Public : getCount()
      * 
      * Description:
-     *      Loads an array of integerts into a linked list.
+     *      //Gets the current size of the list.
      * 
      * Params:
-     *      [int*]    :  array of integers
-     *      [int]     :  array size
+     *      None
      * 
      * Returns:
-     *      [type] List*   : a pointer to a linked list of integers.
+     *     int  : integer
      */
 template <class ItemType>
 int List<ItemType>::getCount()

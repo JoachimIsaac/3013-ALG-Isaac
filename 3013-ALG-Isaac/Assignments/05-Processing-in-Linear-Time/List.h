@@ -11,22 +11,38 @@ using namespace std;
  * Class Name
  * 
  * Description:
- *      Description of your class and what it does
+ *      Tempalted Linked list class with Node struct which
+ *		holds the both a word and a definition.
  * 
  * Public Methods:
- *      - A list of 
- *      - each public method
- *      - with return types
+ *      - List()
+ *      - List(List &other)
+ *      - ~List()
+ *		- void ClearList()
+ *		- void ClearList()
+ * 		- void SwapLists(List &other)
+ *		- void ResetCursor()
+ *		- bool CursorAtEnd()
+ *		- void GetCurrentItem(ItemType &Item)
+ *		- string GetCurrentItem()
+ *		- void UpdateCurrentItem(const ItemType &Item)
+ *		- void AdvanceCursor()
+ *		- void InsertItem(const ItemType &Item)
+ *		- void DeleteItem()
+ *		- int getCount()
  * 
- * Private Methods:
- *      - A list of 
- *      - each private method
- *      - with return types
+ * Private memeber data:
+ *      - wordNode *head;
+ *	    - wordNode *cursor;
+ *	    - int count;
  * 
  * Usage: 
  * 
- *      - examples of how
- *      - to use your class 
+ *       List<string> wordNodeList;
+ *		 wordNodeList.InsertItem(word,definition);
+ *		 cout<< wordNodeList.getCount<<"\n';
+ *		 cout<< Here is the current item: <<wordNodeList.GetCurrentItem()<<"\n";
+ *		 
  *      
  */
 template <class ItemType>

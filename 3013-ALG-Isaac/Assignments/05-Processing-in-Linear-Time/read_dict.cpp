@@ -2,18 +2,34 @@
 //
 // Author:           Joachim Isaac 
 // Email:            joachimvivian3@gmail.com
-// Label:            L04
-// Title:            Assignment 4 - Array Based Stack
+// Label:            05-P02
+// Title:            Assignment 5 -  Processing in Linear Time 
 // Course:           3013
 // Semester:         Spring 2020
 //
 // Description:
-//       describe program here thoroughly 
+//       This program reads a JSON file and runs through it to generate 
+//       search suggestions using the getch function. 
+//       This is timed so that we can compare if search in a different
+//       manner (O(log(n))) will have a large impact on the time taken.
 //
 // Usage:
-//       how to use the program if necessary
+//       cd  05-Processing-in-Linear-Time
+//       g++ -std=c++17 read_dict.cpp -o run
+//       ./run
+//       Then type words to get suggestions.
+//       You can hit back space to remove a character
+//       or enter to clear and entire word.
+//       pressing '/' this stops the program.
 //
-// Files:            (list of all source files used in this program)
+// Files:  -->dict_w_defs.json
+//         -->json.hpp
+//         -->JsonFacade.hpp
+//         -->List.cpp
+//         -->List.h
+//         -->mygetch.hpp
+//         -->read_dict.cpp (main)
+//         -->Timer.hpp
 /////////////////////////////////////////////////////////////////////////////////
 
 #include "mygetch.hpp"
@@ -35,31 +51,34 @@ int main(){
 
     List<string> wordNodeList;
 
-    Timer T;//Timer object.
+    Timer T;                            //Timer object.
     
-    JsonFacade J("dict_w_defs.json");// create instance of json class
+    JsonFacade J("dict_w_defs.json");  //create instance of json class
   
 
-    string key;//key variable to access json object
+    string key;                      //key variable to access json object
 
-    vector<string> keys = J.getKeys();
+   
+    //Loads the vector with keys form Json file.
+    vector<string> keys = J.getKeys(); 
     
-     //Load the words into linked list.
+    //Load the words into linked list.
     for(int i = 0; i < keys.size(); i++)
      wordNodeList.InsertItem(keys[i],J.getValue(keys[i]));
 
   
 
-    char k;//holder for character being typed
-    string word = "";// var to concatenate letters to
+    char k;                 //holder for character being typed
+
+    string word = "";      //variable to concatenate letters to
 
     cout<<"Type keys and watch what happens. Type '/' to quit."<<endl;
 
-    // While capital  '/' is not typed keep looping
+    // While capital '/' is not typed keep looping
     while ((k = getch()) != '/') {
         
         //Ensures that we start from the start of the list.
-        //resets the cursor at the start of the list.
+        //Resets the cursor at the start of the list.
         wordNodeList.ResetCursor();
 
         if((int)k != 127){//Type a character and it adds to the word variable.
@@ -70,13 +89,16 @@ int main(){
         }     
 
 
-    vector<string> listOfWords;//Vector which contains all matching words. 
-    vector<string> top_ten_words;//vector which contains the top 10 results.
+    vector<string> listOfWords;     //Vector which contains all matching words. 
+
+
+    vector<string> top_ten_words;  //vector which contains the top 10 results.
     
-    T.Start();//Timing, loading the results.
+
+    T.Start();                   //Timing, loading the results.
     
+    //Loops through all the words that were read into the linked list.
     for (int i = 0; i < wordNodeList.getCount(); i++){
-    
     //Searches for the substring in the current word.
     size_t found = wordNodeList.GetCurrentItem().find(word); 
     
@@ -87,7 +109,7 @@ int main(){
 
         //If a higher priority substring was found
         //Store it in the list of top ten words.
-        if(found < word.length()){
+        if(found <= word.length()){
         top_ten_words.push_back(wordNodeList.GetCurrentItem()); 
         }
     }
@@ -95,37 +117,41 @@ int main(){
   }
     
 
-    T.End();//The timing of loading the results ends.
+    T.End();                 //The timing of loading the results ends.
 
 
-    string results = "";//String to store the top 10 words.
-
-    int iterator = 0; //counts up to the top 10 relevant words.
+    string results = "";    //String to store the top 10 words.
 
 
-    int limit = 0; // Stores the limit of valid words
-                  // Since we could get less than 10.
+    int iterator = 0;       //counts up to the top 10 relevant words.
 
 
-    if(top_ten_words.size() > 9){// if size is greater than 9 limit to 10.
+    int limit = 0;          // Stores the limit of valid words
+                            // Since we could get less than 10.
+
+    
+    // If size is greater than 9 limit to 10.
+    if(top_ten_words.size() > 9){
         limit = 10;
     }
-    else{//if it is less than set the size of the limit to the top_ten array's size.
+    else{
+    //If it is less than, set the size of the 
+    //limit to the top_ten array's size.
         limit = top_ten_words.size();
     }
 
-    // Load the results into the results string.
+    //Load the results into the results string.
     while(iterator < limit){
             results += top_ten_words[iterator] + " ";
             iterator++;     
     }
 
 
-    double timeTaken = T.Seconds();// Store the time it took in a variable.
+    double timeTaken = T.Seconds();   // Store the time it took in a variable.
 
     
-        if((int)k != 10){ // if character hit is not equal to 10.
-                          //print this information.
+        if((int)k != 10){           //If character hit is not equal to 10.
+                                   //print this information.
             cout << "Word: " << word << "\n\n";
             cout << listOfWords.size() << " words found in "<<timeTaken<< " seconds\n\n";
             cout<<results<<"\n\n\n";
