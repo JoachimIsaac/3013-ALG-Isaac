@@ -43,7 +43,7 @@ This keeps the linked list search time complexity to be O(n) in the worst case.*
 - 6) Finding some element in an ordered linked list would require **O(n) or O(n/2) which would still be considered O(n) after the constant is ignored** operations (average case)
 **- 6) Explaination: Whether or not the linked list is ordered or not doesn't change the nature of the data structure.
 It does not inherently have indexes for each node and so remembering the location(index) of each node isn't really built into this data structure. Hence even though it is ordered there is no real way to eliminate half of the search base.
-This keeps the linked list search time complexity to be O(n) in the Worst case. However if the target being searched for is in the middle of the linked list, it could be argued that the average time complexity is O(n/2), but this still converges to O(n). **
+This keeps the linked list search time complexity to be O(n) in the Worst case. However if the target being searched for is in the middle of the linked list, it could be argued that the average time complexity is O(n/2), but this still converges to O(n).**
 
 - 7) Finding some element in an unordered linked list would require **O(n)** operations (worst case)
 **- 7) Explaination: Since we have no idea where the target is within the link list the best thing we can do is a linear search through the link list. At that point, worst case the time complexity will be O(n) (linear time).**
