@@ -52,7 +52,7 @@ This keeps the linked list search time complexity to be O(n) in the average case
 
 - 8) For each of the following, count the number of operations where some_statement is executed based on the loops
 
-- 8A) **Answer: O(n^2) It's simples each for loop runs at O(n) and so since they are nest you multiply**
+- 8A) **Answer: O(n^2) It's simple, each for loop runs at O(n), since they are nested you multiply**
 **there complexities to get there overal time complexity O(n * n) is the same as O(n^2).** 
 ```cpp
 //A
@@ -63,9 +63,9 @@ for (int I = 0; I < n; I++)
 
 
 
-- 8B)**Answer: O(n/2 * n) the first for loop increments by two and so it goes through (n) in half the time.** 
-**this is why we have n/2 while the second loop is just (n). Since the loops are nested we multiply complexities**
-**and so we get O(n/2 *n).**
+- 8B)**Answer: O(n/2 * n) the first for-loop increments by two and so it loops through (n) in half the time.** 
+**this is why we have n/2 while the second for-loop takes O(n) time. Since the loops are nested we multiply complexities**
+**and so we get O(n/2 * n).**
 ```cpp
 //B
 for (int I = 0; I < n; I +=2)
@@ -75,8 +75,9 @@ for (int I = 0; I < n; I +=2)
 
 
 
-- 8C)**Answer: O(log(n) * n) Each iteration of the first for loop multiplies the iterator by 2 this eliminates**
-**(n) by half every time and so this give the first for loop a time complexity if O(log(n). Since they are nested and the inner for loop has a time complexity of O(n) the overal time complexity of the code is O(log(n) * n)**
+- 8C)**Answer: O(log(n) * n) Each iteration of the first for-loop multiplies the iterator by 2, this eliminates**
+**('n' the search base/size) by half every time and so this gives the first for-loop a time complexity if O(log(n)). Since they are nested and the inner for-loop has a time complexity of O(n) the overall time complexity of the code is 
+O(log(n) * n)**
 ```cpp
 //C
 for (int j = 1 ; j < n ; j *= 2)
