@@ -114,7 +114,7 @@ In each of the following examples, please choose the best data structure(s).
 
 
 - 15) To implement printer spooler so that jobs can be printed in the order of their arrival.
-- 15) **Answer: Queue (like a queue/line of people waiting to get through a checkpoint). It follows first in first out struture and so this allows **
+- 15) **Answer: Queue (like a queue/line of people waiting to get through a checkpoint). It follows first in first out struture and so this allows**
 
 
 - 16) To implement back functionality in the internet browser.
