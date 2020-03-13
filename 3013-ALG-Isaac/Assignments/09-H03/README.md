@@ -96,21 +96,21 @@ In each of the following examples, please choose the best data structure(s).
 - 10) Note that there may not be one clear answer.
 
 - 10) You have to store social network “feeds”. You do not know the size, and things may need to be dynamically added.
-- 10)**Answer: In this case a Linked list or even a hash table could be used.Personally I'd go with the hash table since it uniquely identifies each feed and it also allows for dynamic resizing.I would assume that we have a feed class and we could create a hashtable with a key value of some identifier for a feed like a string with the feed's name i.e "funny cats" and the feed object. --> {'funny cat': feed_object} **
+- 10) **Answer: In this case a Linked list or even a hash table could be used.Personally I'd go with the hash table since it uniquely identifies each feed and it also allows for dynamic resizing.I would assume that we have a feed class and we could create a hashtable with a key value of some identifier for a feed like a string with the feed's name i.e "funny cats" and the feed object. --> {'funny cat': feed_object}**
 
 - 11) You need to store undo/redo operations in a word processor.
-- 11)**Answer: A stack is the best Data structure for an undo and/redo word processor. Each time a state of a word is changed it's placed on the stack. If you undo you pop off the stack and go to the previous state and if you redo you push back the last popped value to the stack.**
+- 11) **Answer: A stack is the best Data structure for an undo and/redo word processor. Each time a state of a word is changed it's placed on the stack. If you undo you pop off the stack and go to the previous state and if you redo you push back the last popped value to the stack.**
 
 - 12) You need to evaluate an expression (i.e., parse).
-- 12)**Answer: You could use a stack or tree/trie to parse an expression, with the stack you could load the stack with the expresssion and then compare the what ever expression/word you are looking for by popping each value off, storing whatever is popped off and then comapring the two. 
+- 12) **Answer: You could use a stack or tree/trie to parse an expression, with the stack you could load the stack with the expresssion and then compare the what ever expression/word you are looking for by popping each value off, storing whatever is popped off and then comapring the two.** 
 
 
 - 13) You need to store the friendship information on a social networking site. I.e., who is friends with who.
-- 13)**Answer: Graph(each person is a point, and connections/friendships are an edge)**
+- 13) **Answer: Graph(each person is a point, and connections/friendships are an edge)**
 
 
 - 14) You need to store an image (1000 by 1000 pixels) as a bitmap.
-- 14)**Answer: Array (2-dimensional, 1000x1000, storing color values)**
+- 14) **Answer: Array (2-dimensional, 1000x1000, storing color values)**
 
 
 - 15) To implement printer spooler so that jobs can be printed in the order of their arrival.
@@ -122,7 +122,7 @@ In each of the following examples, please choose the best data structure(s).
 
 
 - 17) To store the possible moves in a chess game.
-- 17)**Answer: Tree(can follow any game move by move, down from the root to the leaf. It would be a massive tree though)**
+- 17) **Answer: Tree(can follow any game move by move, down from the root to the leaf. It would be a massive tree though)**
 
 
 - 18) To store a set of fixed key words which are referenced very frequently.
