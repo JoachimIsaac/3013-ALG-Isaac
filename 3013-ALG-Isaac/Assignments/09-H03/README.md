@@ -2,18 +2,18 @@
 #### Due: 03-13-2020 (Friday @ 3:30 p.m.)
 
 
-- Given a collection of algorithms that runs on **O(1), O(n log n), O(n), O(n<sup>2</sup>), O(log n), O(n!)**, order the algorithms from fastest to slowest.
-**Answer: Fastest to Slowest: O(1), O(log(n)), O(n) , O(n log(n)) , O(n<sup>2</sup>) , O(n!)** 
+- Given a collection of algorithms that runs on **O(1), O(n log n), O(n), O(n^2), O(log n), O(n!)**, order the algorithms from fastest to slowest.
+**Answer: Fastest to Slowest: O(1), O(log(n)), O(n) , O(n log(n)) , O(n^2) , O(n!)** 
 
 
-- Suppose that the complexity of an algorithm is O(n<sup>2</sup>). Suppose that the program that uses the algorithm run in 10 seconds for a data set of size n. If the data size is doubled, how long will it take (approximately) to run the program? 
-- **Answer: The time is directly propotional to n^2 So, T/10=(2*N)<sup>2</sup>/N<sup>2</sup> T=40 seconds needed
+- Suppose that the complexity of an algorithm is O(n^2). Suppose that the program that uses the algorithm run in 10 seconds for a data set of size n. If the data size is doubled, how long will it take (approximately) to run the program? 
+- **Answer: The time is directly propotional to n^2 So, T/10=(2*N)^2/N^2 T=40 seconds needed
 So if the program was running in 10 seconds if you double the data size it would take about 40 seconds.**
 
 
 
 
-- Complexities : **O(1), O(n log n), O(n), O(n<sup>2</sup>), O(log n), O(n!) , O(h)**
+- Complexities : **O(1), O(n log n), O(n), O(n^2), O(log n), O(n!) , O(h)**
 
 - 1) Finding the max element in an unordered stack would require **O(n)** operations
 **- 1) Explaination: This can be said because we have no idea where the max element would be
@@ -43,7 +43,7 @@ This keeps the linked list search time complexity to be O(n) in the worst case.*
 - 6) Finding some element in an ordered linked list would require **O(n) or O(n/2) which would still be considered O(n) after the constant is ignored** operations (average case)
 **- 6) Explaination: Whether or not the linked list is ordered or not doesn't change the nature of the data structure.
 It does not inherently have indexes for each node and so remembering the location(index) of each node isn't really built into this data structure. Hence even though it is ordered there is no real way to eliminate half of the search base.
-This keeps the linked list search time complexity to be O(n) in the Worst case. However if the target being searched for is in the middle of the linked list, it could be argued that the average time complexity is O(n/2), but this still converges to O(n).**
+This keeps the linked list search time complexity to be O(n) in the average case. However if the target being searched for is in the middle of the linked list, it could be argued that the average time complexity is O(n/2), but this still converges to O(n).**
 
 - 7) Finding some element in an unordered linked list would require **O(n)** operations (worst case)
 **- 7) Explaination: Since we have no idea where the target is within the link list the best thing we can do is a linear search through the link list. At that point, worst case the time complexity will be O(n) (linear time).**
@@ -52,8 +52,8 @@ This keeps the linked list search time complexity to be O(n) in the Worst case. 
 
 - 8) For each of the following, count the number of operations where some_statement is executed based on the loops
 
-- 8A) **Answer: O(n<sup>2</sup>) It's simples each for loop runs at O(n) and so since they are nest you multiply**
-**there complexities to get there overal time complexity O(n * n) is the same as O(n<sup>2</sup>).** 
+- 8A) **Answer: O(n^2) It's simples each for loop runs at O(n) and so since they are nest you multiply**
+**there complexities to get there overal time complexity O(n * n) is the same as O(n^2).** 
 ```cpp
 //A
 for (int I = 0; I < n; I++)
@@ -65,7 +65,7 @@ for (int I = 0; I < n; I++)
 
 - 8B)**Answer: O(n/2 * n) the first for loop increments by two and so it goes through (n) in half the time.** 
 **this is why we have n/2 while the second loop is just (n). Since the loops are nested we multiply complexities**
-**and so we get O(n/2 *n).
+**and so we get O(n/2 *n).**
 ```cpp
 //B
 for (int I = 0; I < n; I +=2)
