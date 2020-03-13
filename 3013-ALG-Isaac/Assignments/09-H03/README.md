@@ -26,8 +26,8 @@ to it.**
 
 - 3) Finding some element in some Binary Search Tree would require **O(n)** operations
 **- 3) Explaination: The time complexity of O(n) is valid in this case because it was not
-specified wether or not the tree was balanced. If the tree was not blance then there is
-a chance where it would have to search through a linked list shaped branch for it's target.**
+specified wether or not the tree was balanced. If the tree was not balanced then there is
+a chance where the search would be through a linked list shaped branch for it's target which would take linear time.**
 
 - 4) Finding some element in a balanced Binary Search Tree would require **O(log(n))** operations
 **- 4) Explaination: Since the tree is balanced every time a search is made it can be said that it eliminates
@@ -35,25 +35,25 @@ half of the search area and so this converges to a time complexity of Olog(n).**
 
 
 - 5) Finding some element in an ordered linked list would require **O(n)** operations (worst case)
-**- 5) Explaination: Whether or not the linked list is ordered or not doesn't change the nature of the data structure.
+**- 5) Explaination: Whether or not the linked list is ordered doesn't change the nature of the data structure.
 It does not inherently have indexes for each node and so remembering the location(index) of each node isn't really built into this data structure. Hence even though it is ordered there is no real way to eliminate half of the search base.
 This keeps the linked list search time complexity to be O(n) in the worst case.**
 
 
 - 6) Finding some element in an ordered linked list would require **O(n) or O(n/2) which would still be considered O(n) after the constant is ignored** operations (average case)
-**- 6) Explaination: Whether or not the linked list is ordered or not doesn't change the nature of the data structure.
+**- 6) Explaination: Whether or not the linked list is ordered doesn't change the nature of the data structure.
 It does not inherently have indexes for each node and so remembering the location(index) of each node isn't really built into this data structure. Hence even though it is ordered there is no real way to eliminate half of the search base.
-This keeps the linked list search time complexity to be O(n) in the average case. However if the target being searched for is in the middle of the linked list, it could be argued that the average time complexity is O(n/2), but this still converges to O(n).**
+This keeps the linked list search time complexity to be O(n) in the average case. However if the target being searched for is in the middle of the linked list, it could be argued that the average time complexity is O(n/2), but this still converges to O(n) after all constants are eliminated.**
 
 - 7) Finding some element in an unordered linked list would require **O(n)** operations (worst case)
-**- 7) Explaination: Since we have no idea where the target is within the link list the best thing we can do is a linear search through the link list. At that point, worst case the time complexity will be O(n) (linear time).**
+**- 7) Explaination: Since we have no idea where the target is within the linked list the best thing we can do is a linear search through the link list. At that point, worst case the time complexity will be O(n) (linear time).**
 
 
 
 - 8) For each of the following, count the number of operations where some_statement is executed based on the loops
 
-- 8A) **Answer: O(n^2) It's simple, each for loop runs at O(n), since they are nested you multiply**
-**there complexities to get there overal time complexity O(n * n) is the same as O(n^2).** 
+- 8A) **Answer: O(n^2) It's simple, each for loop runs at O(n). Since they are nested you multiply**
+**there complexities to get there overal time complexity. O(n * n) is the same as O(n^2).** 
 ```cpp
 //A
 for (int I = 0; I < n; I++)
@@ -97,7 +97,7 @@ In each of the following examples, please choose the best data structure(s).
 - 10) Note that there may not be one clear answer.
 
 - 10) You have to store social network “feeds”. You do not know the size, and things may need to be dynamically added.
-- 10) **Answer: In this case a Linked list or even a hash table could be used.Personally I'd go with the hash table since it uniquely identifies each feed and it also allows for dynamic resizing.I would assume that we have a feed class and we could create a hashtable with a key value of some identifier for a feed like a string with the feed's name i.e "funny cats" and the feed object. --> {'funny cat': feed_object}**
+- 10) **Answer: In this case a Linked list or even a hash table could be used.Personally I'd go with the hash table since it uniquely identifies each feed and it also allows for dynamic resizing. I would assume that we have a feed class and we could create a hashtable with a key value of some identifier for a feed like a string with the feed's name i.e "funny cats" and the feed object. --> {'funny cat': feed_object}**
 
 - 11) You need to store undo/redo operations in a word processor.
 - 11) **Answer: A stack is the best Data structure for an undo and/redo word processor. Each time a state of a word is changed it's placed on the stack. If you undo you pop off the stack and go to the previous state and if you redo you push back the last popped value to the stack.**
@@ -115,11 +115,11 @@ In each of the following examples, please choose the best data structure(s).
 
 
 - 15) To implement printer spooler so that jobs can be printed in the order of their arrival.
-- 15) **Answer: Queue (like a queue/line of people waiting to get through a checkpoint). It follows first in first out struture and so this allows**
+- 15) **Answer: Queue (like a queue/line of people waiting to get through a checkpoint). It follows first in first out struture and so this allows the most the first job to be printed first and pending jobs to be printed afterwards.**
 
 
 - 16) To implement back functionality in the internet browser.
-- 16) **Answer: Stack or linked list Stack (you can add to the stack with each site visited, and pop off as necessary to go back, as long as you don't care about going forward. If you care about forward, this is the same scenario as the word processor, so linked list(doublely) is the best data structure in my opinion.)**
+- 16) **Answer: Stack or linked list Stack (you can add to the stack with each site visited, and pop off as necessary to go back, as long as you don't care about going forward. If you care about going forward, a linked list(doublely) is the best data structure in my opinion.Since it would allow you to go back and forward by treating the sites as nodes.)**
 
 
 - 17) To store the possible moves in a chess game.
@@ -131,7 +131,7 @@ In each of the following examples, please choose the best data structure(s).
 
 
 - 19) To store the customer order information in a drive-in burger place. (Customers keep on coming and they have to get their correct food at the payment/food collection window.)
-- 19) **Answer: Queue or Hash Table (if this is a drive thru, assuming people aren't cutting in front of one another, it's like the printer question so a Queue would be best first in first out. If customers are placing orders ahead of time, and can arrive in any order, a hash table would be much better, with an order number or customer name as the key and the order details as the value)**
+- 19) **Answer: Queue or Hash Table (if this is a drive thru, assuming people aren't cutting in front of one another, it's like the printer question so a Queue would be best, "first in first out". If customers are placing orders ahead of time, and can arrive in any order, a hash table would be much better, with an order number or customer name as the key and the order details as the value)**
 
 
 - 20) To store the genealogy information of biological species.
