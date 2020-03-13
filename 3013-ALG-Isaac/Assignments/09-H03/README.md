@@ -15,37 +15,37 @@ So if the program was running in 10 seconds if you double the data size it would
 
 - Complexities : **O(1), O(n log n), O(n), O(n<sup>2</sup>), O(log n), O(n!) , O(h)**
 
-- 1) Finding the max element in an unordered stack would require **O(n)** operations?
+- 1) Finding the max element in an unordered stack would require **O(n)** operations
 **- 1) Explaination: This can be said because we have no idea where the max element would be
 on the stack and so we would have to continiously pop off the stack to get to it.**
 
-- 2) Finding the min element in an unordered queue would require **O(n)** operations?
+- 2) Finding the min element in an unordered queue would require **O(n)** operations
 **- 2) Explaination: This can be said because we have no idea where the min element would be
 on the queue and so we would have to continiously remove elements from the front of the queue to get 
 to it.**
 
-- 3) Finding some element in some Binary Search Tree would require **O(n)** operations?
+- 3) Finding some element in some Binary Search Tree would require **O(n)** operations
 **- 3) Explaination: The time complexity of O(n) is valid in this case because it was not
 specified wether or not the tree was balanced. If the tree was not blance then there is
 a chance where it would have to search through a linked list shaped branch for it's target.**
 
-- 4) Finding some element in a balanced Binary Search Tree would require **O(log(n))** operations?
+- 4) Finding some element in a balanced Binary Search Tree would require **O(log(n))** operations
 **- 4) Explaination: Since the tree is balanced every time a search is made it can be said that it eliminates
 half of the search area and so this converges to a time complexity of Olog(n).**
 
 
-- 5) Finding some element in an ordered linked list would require **O(n)** operations (worst case)?
+- 5) Finding some element in an ordered linked list would require **O(n)** operations (worst case)
 **- 5) Explaination: Whether or not the linked list is ordered or not doesn't change the nature of the data structure.
 It does not inherently have indexes for each node and so remembering the location(index) of each node isn't really built into this data structure. Hence even though it is ordered there is no real way to eliminate half of the search base.
 This keeps the linked list search time complexity to be O(n) in the worst case.**
 
 
-- 6) Finding some element in an ordered linked list would require **O(n) or O(n/2) which would still be considered O(n) after the constant is ignored** operations (average case)?
+- 6) Finding some element in an ordered linked list would require **O(n) or O(n/2) which would still be considered O(n) after the constant is ignored** operations (average case)
 **- 6) Explaination: Whether or not the linked list is ordered or not doesn't change the nature of the data structure.
 It does not inherently have indexes for each node and so remembering the location(index) of each node isn't really built into this data structure. Hence even though it is ordered there is no real way to eliminate half of the search base.
 This keeps the linked list search time complexity to be O(n) in the Worst case. However if the target being searched for is in the middle of the linked list, it could be argued that the average time complexity is O(n/2), but this still converges to O(n). **
 
-- 7) Finding some element in an unordered linked list would require **O(n)** operations (worst case)?
+- 7) Finding some element in an unordered linked list would require **O(n)** operations (worst case)
 **- 7) Explaination: Since we have no idea where the target is within the link list the best thing we can do is a linear search through the link list. At that point, worst case the time complexity will be O(n) (linear time).**
 
 
