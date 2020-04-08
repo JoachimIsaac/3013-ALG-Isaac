@@ -10,7 +10,7 @@
 | 07     |[06-Heapify Debacle](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/07-H02-MinHeapConstruction)|Homework where we construct a heap|
 | 10-P04 |[Program 04](https://github.com/JoachimIsaac/3013-ALG-Isaac/blob/master/3013-ALG-Isaac/Assignments/459/main.cpp)|Graph Connectivity|
 | 11-P05 |[Program 05](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/484)|STL Maps|
-| 12-P06 |[Program 06](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/11597%20)|Spanning SubTrees|
+| 12-P06 |[Program 06](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/11597)|Spanning SubTrees|
 
 
 
