@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
   cin >> testCases;
 
 
-  while(testCases){
+  while(testCases--){
 
   int numberOfCarToLoad, timeTakenToDropOff, numberOfCarsInCase;
 
@@ -130,16 +130,8 @@ int main(int argc, char *argv[]){
     if (testCases) cout << endl;
     
     
-    testCases--;
+    
   }
-
-
-
-
-
-
-
-
 
 
 
