@@ -1,18 +1,18 @@
 ## Assignments
 
-| Number | Folder | Description |
-| :----: | ------ | ----------- |
-| 01     |[01-Getting Started](Assignments/)|Assignment that makes this table|
-| 02     |[02-CommentedCode](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/02-CommentedCode)|Assignment to ensure proper commenting|
-| 03     |[03-Banner](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/03-BannerPage)|Assignment to make banner using Vs Code extension|
-| 04     |[04-StackResize](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/04-StackResize)|Assignment resizes stack|
-| 05     |[05-Processing-in-linear-time](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/05-Processing-in-Linear-Time)|That we use JSON|
-| 07     |[06-Heapify Debacle](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/07-H02-MinHeapConstruction)|Homework where we construct a heap|
-| 10-P04 |[Program 04](https://github.com/JoachimIsaac/3013-ALG-Isaac/blob/master/3013-ALG-Isaac/Assignments/459/main.cpp)|Graph Connectivity|
-| 11-P05 |[Program 05](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/484)|STL Maps|
-| 12-P06 |[Program 06](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/11597)|Spanning SubTrees|
-| 13-P07 |[Program 07](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/1112)|Shortest Path|
-| 14-P08 |[Ferry Loading](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/Ferry%20Loading)|Problem 1,2,3| 
+|Assignment ID| Folder | Description |
+| :----------:      | ------ | ----------- |
+| 01-A01      |[01-Getting Started](Assignments/)|Assignment that makes this table|
+| 02-A02      |[02-CommentedCode](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/02-CommentedCode)|Assignment to ensure proper commenting|
+| 03-H01      |[03-Banner](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/03-BannerPage)|Assignment to make banner using Vs Code extension|
+| 04-P01      |[04-StackResize](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/04-StackResize)|Assignment resizes stack|
+| 05-P02      |[05-Processing-in-linear-time](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/05-Processing-in-Linear-Time)|That we use JSON|
+| 07-H02      |[06-Heapify Debacle](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/07-H02-MinHeapConstruction)|Homework where we construct a heap|
+| 10-P04      |[Program 04](https://github.com/JoachimIsaac/3013-ALG-Isaac/blob/master/3013-ALG-Isaac/Assignments/459/main.cpp)|Graph Connectivity|
+| 11-P05      |[Program 05](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/484)|STL Maps|
+| 12-P06      |[Program 06](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/11597)|Spanning SubTrees|
+| 13-P07      |[Program 07](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/1112)|Shortest Path|
+| 14-P08      |[Ferry Loading](https://github.com/JoachimIsaac/3013-ALG-Isaac/tree/master/3013-ALG-Isaac/Assignments/Ferry%20Loading)|Problem 1,2,3| 
 
 
 ## File Legend
